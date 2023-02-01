@@ -24,6 +24,7 @@
 		3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B0F8FA6298AA7CC007039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B0F8FA8298AA7CC007039B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B0F8FB1298AECB3007039B3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +61,7 @@
 				3B0F8F9C298AA7C8007039B3 /* SceneDelegate.swift */,
 				3B0F8F9E298AA7C8007039B3 /* ViewController.swift */,
 				3B0F8FA0298AA7C8007039B3 /* Main.storyboard */,
+				3B0F8FB1298AECB3007039B3 /* Config.xcconfig */,
 				3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */,
 				3B0F8FA5298AA7CC007039B3 /* LaunchScreen.storyboard */,
 				3B0F8FA8298AA7CC007039B3 /* Info.plist */,
@@ -168,6 +170,7 @@
 /* Begin XCBuildConfiguration section */
 		3B0F8FA9298AA7CC007039B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B0F8FB1298AECB3007039B3 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
