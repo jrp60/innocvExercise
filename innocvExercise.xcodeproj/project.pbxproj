@@ -13,9 +13,11 @@
 		3B0F8FA2298AA7C8007039B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8FA0298AA7C8007039B3 /* Main.storyboard */; };
 		3B0F8FA4298AA7CC007039B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */; };
 		3B0F8FA7298AA7CC007039B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8FA5298AA7CC007039B3 /* LaunchScreen.storyboard */; };
+		49E3C0F05CC59BFE44702F77 /* Pods_innocvExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0A2BAB89AE2650563E7E0D /* Pods_innocvExercise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153782F901BE4C5614CE50BB /* Pods-innocvExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innocvExercise.release.xcconfig"; path = "Target Support Files/Pods-innocvExercise/Pods-innocvExercise.release.xcconfig"; sourceTree = "<group>"; };
 		3B0F8F97298AA7C8007039B3 /* innocvExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = innocvExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0F8F9A298AA7C8007039B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B0F8F9C298AA7C8007039B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,7 +26,9 @@
 		3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B0F8FA6298AA7CC007039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B0F8FA8298AA7CC007039B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3B0F8FB1298AECB3007039B3 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		3B9B0E89298AF6B0008DADFE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		7B89ED7FE1EA5BA4985981B8 /* Pods-innocvExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innocvExercise.debug.xcconfig"; path = "Target Support Files/Pods-innocvExercise/Pods-innocvExercise.debug.xcconfig"; sourceTree = "<group>"; };
+		7E0A2BAB89AE2650563E7E0D /* Pods_innocvExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_innocvExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +36,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E3C0F05CC59BFE44702F77 /* Pods_innocvExercise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B529242AA3CF6BBA26A7087 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E0A2BAB89AE2650563E7E0D /* Pods_innocvExercise.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3B0F8F8E298AA7C8007039B3 = {
 			isa = PBXGroup;
 			children = (
 				3B0F8F99298AA7C8007039B3 /* innocvExercise */,
 				3B0F8F98298AA7C8007039B3 /* Products */,
+				D348209B18FA520EA053739F /* Pods */,
+				1B529242AA3CF6BBA26A7087 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,12 +76,22 @@
 				3B0F8F9C298AA7C8007039B3 /* SceneDelegate.swift */,
 				3B0F8F9E298AA7C8007039B3 /* ViewController.swift */,
 				3B0F8FA0298AA7C8007039B3 /* Main.storyboard */,
-				3B0F8FB1298AECB3007039B3 /* Config.xcconfig */,
+				3B9B0E89298AF6B0008DADFE /* Config.xcconfig */,
 				3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */,
 				3B0F8FA5298AA7CC007039B3 /* LaunchScreen.storyboard */,
 				3B0F8FA8298AA7CC007039B3 /* Info.plist */,
 			);
 			path = innocvExercise;
+			sourceTree = "<group>";
+		};
+		D348209B18FA520EA053739F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B89ED7FE1EA5BA4985981B8 /* Pods-innocvExercise.debug.xcconfig */,
+				153782F901BE4C5614CE50BB /* Pods-innocvExercise.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B0F8FAB298AA7CC007039B3 /* Build configuration list for PBXNativeTarget "innocvExercise" */;
 			buildPhases = (
+				B119B694FF18753A5B28E570 /* [CP] Check Pods Manifest.lock */,
 				3B0F8F93298AA7C8007039B3 /* Sources */,
 				3B0F8F94298AA7C8007039B3 /* Frameworks */,
 				3B0F8F95298AA7C8007039B3 /* Resources */,
+				D3E18BAFAFE3162F947CA0AE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +162,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B119B694FF18753A5B28E570 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-innocvExercise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3E18BAFAFE3162F947CA0AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innocvExercise/Pods-innocvExercise-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-innocvExercise/Pods-innocvExercise-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-innocvExercise/Pods-innocvExercise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B0F8F93298AA7C8007039B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -170,7 +239,7 @@
 /* Begin XCBuildConfiguration section */
 		3B0F8FA9298AA7CC007039B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B0F8FB1298AECB3007039B3 /* Config.xcconfig */;
+			baseConfigurationReference = 3B9B0E89298AF6B0008DADFE /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -287,6 +356,7 @@
 		};
 		3B0F8FAC298AA7CC007039B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B89ED7FE1EA5BA4985981B8 /* Pods-innocvExercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +385,7 @@
 		};
 		3B0F8FAD298AA7CC007039B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 153782F901BE4C5614CE50BB /* Pods-innocvExercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -6,20 +6,26 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
+    
+    var urlBase: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        check()
+        getUrl()
+        AF.request(urlBase+"/api/Health").response { response in
+            debugPrint(response)
+        }
     }
 
-    func check() {
-        if let config = Bundle.main.infoDictionary?["API_URL"] as? String {
-            print(config)
-            print("Config")
+    func getUrl() {
+        if let url = Bundle.main.infoDictionary?["API_URL"] as? String {
+            print(url)
+            urlBase = url
         }
     }
 
