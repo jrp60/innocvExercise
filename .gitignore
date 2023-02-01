@@ -105,5 +105,6 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+Config.xcconfig
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,cocoapods,xcode
