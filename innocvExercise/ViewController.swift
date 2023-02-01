@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     func check() {
         if let config = Bundle.main.infoDictionary?["API_URL"] as? String {
             print(config)
+            print("Config")
         }
     }
 
