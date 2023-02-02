@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class CreateUserVC: UIViewController {
     
     var urlBase: String = ""
 

@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		3B0F8F9B298AA7C8007039B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8F9A298AA7C8007039B3 /* AppDelegate.swift */; };
 		3B0F8F9D298AA7C8007039B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8F9C298AA7C8007039B3 /* SceneDelegate.swift */; };
-		3B0F8F9F298AA7C8007039B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8F9E298AA7C8007039B3 /* ViewController.swift */; };
+		3B0F8F9F298AA7C8007039B3 /* CreateUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F8F9E298AA7C8007039B3 /* CreateUserVC.swift */; };
 		3B0F8FA2298AA7C8007039B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8FA0298AA7C8007039B3 /* Main.storyboard */; };
 		3B0F8FA4298AA7CC007039B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */; };
 		3B0F8FA7298AA7CC007039B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0F8FA5298AA7CC007039B3 /* LaunchScreen.storyboard */; };
+		3BE0393E298B02910026CFA0 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0393D298B02910026CFA0 /* UserTableViewController.swift */; };
+		3BE03940298B02D80026CFA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0393F298B02D80026CFA0 /* User.swift */; };
+		3BE03943298C48E20026CFA0 /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE03942298C48E20026CFA0 /* UserVC.swift */; };
 		49E3C0F05CC59BFE44702F77 /* Pods_innocvExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0A2BAB89AE2650563E7E0D /* Pods_innocvExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +24,15 @@
 		3B0F8F97298AA7C8007039B3 /* innocvExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = innocvExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0F8F9A298AA7C8007039B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B0F8F9C298AA7C8007039B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3B0F8F9E298AA7C8007039B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B0F8F9E298AA7C8007039B3 /* CreateUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserVC.swift; sourceTree = "<group>"; };
 		3B0F8FA1298AA7C8007039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B0F8FA6298AA7CC007039B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B0F8FA8298AA7CC007039B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B9B0E89298AF6B0008DADFE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		3BE0393D298B02910026CFA0 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		3BE0393F298B02D80026CFA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3BE03942298C48E20026CFA0 /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		7B89ED7FE1EA5BA4985981B8 /* Pods-innocvExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-innocvExercise.debug.xcconfig"; path = "Target Support Files/Pods-innocvExercise/Pods-innocvExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		7E0A2BAB89AE2650563E7E0D /* Pods_innocvExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_innocvExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -74,8 +80,11 @@
 			children = (
 				3B0F8F9A298AA7C8007039B3 /* AppDelegate.swift */,
 				3B0F8F9C298AA7C8007039B3 /* SceneDelegate.swift */,
-				3B0F8F9E298AA7C8007039B3 /* ViewController.swift */,
+				3B0F8F9E298AA7C8007039B3 /* CreateUserVC.swift */,
 				3B0F8FA0298AA7C8007039B3 /* Main.storyboard */,
+				3BE03942298C48E20026CFA0 /* UserVC.swift */,
+				3BE0393D298B02910026CFA0 /* UserTableViewController.swift */,
+				3BE03941298B02DC0026CFA0 /* Model */,
 				3B9B0E89298AF6B0008DADFE /* Config.xcconfig */,
 				3B0F8FA3298AA7CC007039B3 /* Assets.xcassets */,
 				3B0F8FA5298AA7CC007039B3 /* LaunchScreen.storyboard */,
@@ -84,13 +93,20 @@
 			path = innocvExercise;
 			sourceTree = "<group>";
 		};
+		3BE03941298B02DC0026CFA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BE0393F298B02D80026CFA0 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D348209B18FA520EA053739F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				7B89ED7FE1EA5BA4985981B8 /* Pods-innocvExercise.debug.xcconfig */,
 				153782F901BE4C5614CE50BB /* Pods-innocvExercise.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,8 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B0F8F9F298AA7C8007039B3 /* ViewController.swift in Sources */,
+				3B0F8F9F298AA7C8007039B3 /* CreateUserVC.swift in Sources */,
+				3BE03943298C48E20026CFA0 /* UserVC.swift in Sources */,
 				3B0F8F9B298AA7C8007039B3 /* AppDelegate.swift in Sources */,
+				3BE0393E298B02910026CFA0 /* UserTableViewController.swift in Sources */,
+				3BE03940298B02D80026CFA0 /* User.swift in Sources */,
 				3B0F8F9D298AA7C8007039B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
