@@ -122,22 +122,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqz-33-yW2">
-                                <rect key="frame" x="186" y="405" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqz-33-yW2">
+                                <rect key="frame" x="147" y="58" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnl-wN-94o">
+                                <rect key="frame" x="160" y="139" width="94" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6I-Cy-iKw">
+                                <rect key="frame" x="156.5" y="477" width="101.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Create User"/>
+                                <connections>
+                                    <action selector="createUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Fo-ZH-u34"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="608-p8-cPO">
+                                <rect key="frame" x="47" y="181" width="320" height="216"/>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f6I-Cy-iKw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2XR-35-6Ab"/>
+                            <constraint firstItem="bnl-wN-94o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jlv-lZ-lJc"/>
+                            <constraint firstItem="608-p8-cPO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-159" id="QMm-Hg-JaX"/>
+                            <constraint firstItem="608-p8-cPO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bbk-7N-2xl"/>
+                            <constraint firstItem="uqz-33-yW2" firstAttribute="centerX" secondItem="bnl-wN-94o" secondAttribute="centerX" id="fOp-oP-Otd"/>
+                            <constraint firstItem="bnl-wN-94o" firstAttribute="top" secondItem="uqz-33-yW2" secondAttribute="bottom" constant="60" id="gRe-jU-jcU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="f6I-Cy-iKw" secondAttribute="bottom" constant="305" id="kat-fd-bgL"/>
+                            <constraint firstItem="uqz-33-yW2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="rR4-z0-wAI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add User" image="person.fill.badge.plus" catalog="system" selectedImage="person.fill.badge.plus" id="fx9-m2-cmg"/>
+                    <connections>
+                        <outlet property="userBirthday" destination="608-p8-cPO" id="XAY-lJ-Ami"/>
+                        <outlet property="userName" destination="bnl-wN-94o" id="q5e-9p-ujg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1452" y="70"/>
+            <point key="canvasLocation" x="-1452.1739130434785" y="69.642857142857139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="n00-WY-pY2">
