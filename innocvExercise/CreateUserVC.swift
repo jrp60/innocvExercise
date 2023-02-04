@@ -19,12 +19,7 @@ class CreateUserVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         getUrl()
-//        AF.request(urlBase+"/api/Health").response { response in
-//            debugPrint(response)
-//        }
     }
     @IBAction func createUser(_ sender: Any) {
         checkInputs()
@@ -32,25 +27,27 @@ class CreateUserVC: UIViewController {
     
     func checkInputs() {
         if self.userName.text != "" {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            let birthdayString = dateFormatter.string(from: self.userBirthday.date)
-            let params: Parameters = ["name": self.userName.text!, "birthday": birthdayString]
-            AF.request(urlBase+"/api/User", method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 200..<299).response { response in
-                print("print response")
-                debugPrint(response)
-                switch response.result {
-                case .success(let data):
-                    print("user created")
-                    print(data)
-                case .failure(let error):
-                    print("error creating user")
-                    print(error)
-                }
-            }
-           
+            requestPostUser()
         } else {
             showAlert(title: "Invalid name", message: "Introduce a valid name")
+        }
+    }
+    
+    func requestPostUser() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let birthdayString = dateFormatter.string(from: self.userBirthday.date)
+        let params: Parameters = ["name": self.userName.text!, "birthday": birthdayString]
+        AF.request(urlBase+"/api/User", method: .post, parameters: params, encoding: JSONEncoding.default).validate(statusCode: 200..<299).response { response in
+            switch response.result {
+            case .success(_):
+                print("user created")
+                self.showAlert(title: "User created", message: "\(self.userName.text!) was created correctly")
+                
+            case .failure(let error):
+                print("error creating user")
+                print(error)
+            }
         }
     }
     

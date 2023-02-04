@@ -41,34 +41,31 @@ class UserVC: UIViewController {
             requestPutUser()
         } else {
             self.showAlert(title: "Invalid name", message: "Introduce a valid name")
-            
         }
     }
     
     func requestPutUser() {
         let idUser:String = String(user!.id)
-        let finalUrl = urlBase+"/api/User/"+idUser
+        let finalUrl = urlBase+"/api/User/"
         let name = self.userName!.text!
         let birthday = user!.birthdate
         let parameters: [String: Any] = ["id": idUser, "name":name, "birthday":birthday]
         AF.request(finalUrl, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
-        switch response.result {
-        case .success(let response):
-            
-            print(response)
-            print("user updated")
-            self.confirmUpdated()
-            //self.navigationController?.popViewController(animated: true)
-                
-        case .failure(let error):
-            print("error 2")
-            print(error)
+            switch response.result {
+            case .success(let response):
+                print("user updated")
+                self.getRequestUser(id: idUser)
+                self.confirmUpdated()
+                    
+            case .failure(let error):
+                print("error 2")
+                print(error)
             }
         }
     }
     
     func confirmUpdated() {
-        self.showAlert(title: "Updated \(user!.name)", message: "")
+        self.showAlert(title: "Updated \(user!.name)", message: "New name: \(self.userName.text!)")
     }
     
     @IBAction func deleteUser(_ sender: Any) {
@@ -84,19 +81,37 @@ class UserVC: UIViewController {
     }
     
     func requestDeleteUser(){
-        
-        let idUser = user?.id
-        AF.request(urlBase+"/api/User/\(idUser)", method: .delete).response { response in
-        switch response.result {
-        case .success(let response):
-            
-            print(response)
-            print("user deleted")
-            self.navigationController?.popViewController(animated: true)
+        let idUser:String = String(user!.id)
+        let url = urlBase+"/api/User/"+idUser
+        AF.request(url, method: .delete).response { response in
+            print("print response")
+            debugPrint(response)
+            switch response.result {
+            case .success(let response):
                 
-        case .failure(let error):
-            print("error 2")
-            print(error)
+                print(response)
+                print("user deleted")
+                self.navigationController?.popViewController(animated: true)
+                    
+            case .failure(let error):
+                print("error 2")
+                print(error)
+            }
+        }
+    }
+    
+    func getRequestUser(id:String){
+        let url = urlBase+"/api/User/"+id
+        AF.request(url).responseJSON { response in
+            debugPrint(response)
+            print("get user")
+            switch response.result {
+            case .success(_):
+                let userAux = try? JSONDecoder().decode(User.self, from: response.data!)
+                self.user = userAux
+            case .failure(let error):
+                print("error 3")
+                print(error)
             }
         }
     }

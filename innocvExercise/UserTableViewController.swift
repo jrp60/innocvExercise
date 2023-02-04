@@ -18,12 +18,12 @@ class UserTableViewController: UITableViewController {
         super.viewDidLoad()
         
         getUrl()
-        getUsers()
+        //getUsers()
     }
     
     override func viewWillAppear(_ animated: Bool){
-
-        self.tableView.reloadData()
+        getUsers()
+        //self.tableView.reloadData()
     }
     
     func getUrl() {
@@ -33,25 +33,24 @@ class UserTableViewController: UITableViewController {
         }
     }
     
-    
     func getUsers() {
         AF.request(urlBase+"/api/User").responseJSON { response in
+            debugPrint(response.result)
+            print("----")
+            debugPrint(response.data!)
             switch response.result {
             case .success(let jsonResponse):
-                
-                
-                for user in response.value as! [NSDictionary] {
-                    print("user in loop")
-                    print(user)
+                self.users.removeAll()
+                for user in jsonResponse as! [NSDictionary] {
+//                    print("user in loop")
+//                    print(user)
                     let jsondata = try? JSONSerialization.data(withJSONObject: user)
-                    var userAux = try? JSONDecoder().decode(User.self, from: jsondata!)
+                    let userAux = try? JSONDecoder().decode(User.self, from: jsondata!)
                     if(userAux == nil){
                         continue
                     }
                     self.users.append(userAux!)
                 }
-                print("array ysers")
-                print(self.users)
                 self.tableView.reloadData()
                     
             case .failure(let error):
