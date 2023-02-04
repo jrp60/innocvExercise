@@ -13,16 +13,19 @@ class UserVC: UIViewController {
     
     var user:User?
     var urlBase: String = ""
+    var lastName: String = ""
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var updateUserBtn: UIButton!
     @IBOutlet weak var deleteUserBtn: UIButton!
+    @IBOutlet weak var undoCangeBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.userName.text = user?.name
         getUrl()
+        undoCangeBtn.isEnabled = false
     }
     
     func getUrl() {
@@ -52,10 +55,11 @@ class UserVC: UIViewController {
         let parameters: [String: Any] = ["id": idUser, "name":name, "birthday":birthday]
         AF.request(finalUrl, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
             switch response.result {
-            case .success(let response):
+            case .success(_):
                 print("user updated")
-                self.getRequestUser(id: idUser)
-                self.confirmUpdated()
+                self.prepareUndo()
+                self.requestGetUser(id: idUser)
+                self.showAlert(title: "Updated \(self.user!.name)", message: "New name: \(self.userName.text!)")
                     
             case .failure(let error):
                 print("error 2")
@@ -64,8 +68,31 @@ class UserVC: UIViewController {
         }
     }
     
-    func confirmUpdated() {
-        self.showAlert(title: "Updated \(user!.name)", message: "New name: \(self.userName.text!)")
+    func prepareUndo() {
+        self.lastName = self.user!.name
+        undoCangeBtn.isEnabled = true
+    }
+    
+    @IBAction func undoLastChange(_ sender: Any) {
+        let idUser:String = String(user!.id)
+        let finalUrl = urlBase+"/api/User/"
+        let name = lastName
+        let birthday = user!.birthdate
+        let parameters: [String: Any] = ["id": idUser, "name":name, "birthday":birthday]
+        AF.request(finalUrl, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
+            switch response.result {
+            case .success(_):
+                print("last change undo")
+                self.requestGetUser(id: idUser)
+                self.showAlert(title: "Undid last change", message: "Restored name: \(name)")
+                self.undoCangeBtn.isEnabled = false
+                self.userName.text = name
+                    
+            case .failure(let error):
+                print("error 2")
+                print(error)
+            }
+        }
     }
     
     @IBAction func deleteUser(_ sender: Any) {
@@ -100,7 +127,7 @@ class UserVC: UIViewController {
         }
     }
     
-    func getRequestUser(id:String){
+    func requestGetUser(id:String){
         let url = urlBase+"/api/User/"+id
         AF.request(url).responseJSON { response in
             debugPrint(response)

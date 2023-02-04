@@ -63,12 +63,21 @@
                                     <action selector="deleteUser:" destination="ZzI-PN-Xtm" eventType="touchUpInside" id="NsG-tC-30K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE1-Ca-mBj">
-                                <rect key="frame" x="136" y="205" width="130" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE1-Ca-mBj">
+                                <rect key="frame" x="223" y="208" width="110" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Update"/>
                                 <connections>
                                     <action selector="updateUser:" destination="ZzI-PN-Xtm" eventType="touchUpInside" id="ECw-gN-o5K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-vJ-wdW">
+                                <rect key="frame" x="70" y="208" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Undo"/>
+                                <connections>
+                                    <action selector="undoLastChange:" destination="ZzI-PN-Xtm" eventType="touchUpInside" id="K1I-OD-PlM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,6 +98,7 @@
                     <navigationItem key="navigationItem" id="Z32-bj-q3v"/>
                     <connections>
                         <outlet property="deleteUserBtn" destination="9Bh-6n-fJ1" id="V3r-1b-sK6"/>
+                        <outlet property="undoCangeBtn" destination="aZc-vJ-wdW" id="vnB-2e-WGd"/>
                         <outlet property="updateUserBtn" destination="oE1-Ca-mBj" id="rBE-t6-isJ"/>
                         <outlet property="userName" destination="NAf-BB-nUt" id="8NF-fs-AcT"/>
                     </connections>
@@ -174,6 +184,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PqC-cA-lo0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g0s-1f-gez">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
