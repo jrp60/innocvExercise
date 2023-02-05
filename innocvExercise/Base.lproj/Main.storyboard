@@ -63,7 +63,7 @@
                                     <action selector="deleteUser:" destination="ZzI-PN-Xtm" eventType="touchUpInside" id="NsG-tC-30K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE1-Ca-mBj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oE1-Ca-mBj">
                                 <rect key="frame" x="223" y="208" width="110" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Update"/>
@@ -71,9 +71,8 @@
                                     <action selector="updateUser:" destination="ZzI-PN-Xtm" eventType="touchUpInside" id="ECw-gN-o5K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-vJ-wdW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZc-vJ-wdW">
                                 <rect key="frame" x="70" y="208" width="110" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Undo"/>
                                 <connections>
@@ -86,13 +85,16 @@
                         <constraints>
                             <constraint firstItem="9Bh-6n-fJ1" firstAttribute="centerX" secondItem="Cgr-Lp-p5h" secondAttribute="centerX" constant="-6" id="04s-qo-KcI"/>
                             <constraint firstItem="NAf-BB-nUt" firstAttribute="centerX" secondItem="Cgr-Lp-p5h" secondAttribute="centerX" id="9MJ-0f-lBY"/>
-                            <constraint firstItem="9Bh-6n-fJ1" firstAttribute="top" secondItem="oE1-Ca-mBj" secondAttribute="bottom" constant="410" id="Aqy-oP-xCW"/>
+                            <constraint firstItem="9Bh-6n-fJ1" firstAttribute="top" secondItem="oE1-Ca-mBj" secondAttribute="bottom" constant="407" id="Aqy-oP-xCW"/>
+                            <constraint firstItem="aZc-vJ-wdW" firstAttribute="leading" secondItem="Qc5-GL-BSB" secondAttribute="leading" constant="70" id="Bec-70-1wy"/>
                             <constraint firstItem="NAf-BB-nUt" firstAttribute="top" secondItem="Qc5-GL-BSB" secondAttribute="top" constant="64" id="Clx-yN-b0J"/>
                             <constraint firstItem="Qc5-GL-BSB" firstAttribute="trailing" secondItem="9Bh-6n-fJ1" secondAttribute="trailing" constant="148" id="Etu-SM-DUF"/>
-                            <constraint firstItem="oE1-Ca-mBj" firstAttribute="top" secondItem="NAf-BB-nUt" secondAttribute="bottom" constant="19" id="FL3-of-E8x"/>
-                            <constraint firstItem="Qc5-GL-BSB" firstAttribute="trailing" secondItem="oE1-Ca-mBj" secondAttribute="trailing" constant="148" id="Zvh-3y-Bqa"/>
-                            <constraint firstItem="oE1-Ca-mBj" firstAttribute="leading" secondItem="Qc5-GL-BSB" secondAttribute="leading" constant="136" id="l8v-DU-pI5"/>
+                            <constraint firstItem="oE1-Ca-mBj" firstAttribute="top" secondItem="NAf-BB-nUt" secondAttribute="bottom" constant="22" id="FL3-of-E8x"/>
+                            <constraint firstItem="aZc-vJ-wdW" firstAttribute="baseline" secondItem="oE1-Ca-mBj" secondAttribute="baseline" id="GJH-iO-R5E"/>
+                            <constraint firstItem="Qc5-GL-BSB" firstAttribute="trailing" secondItem="oE1-Ca-mBj" secondAttribute="trailing" constant="81" id="Zvh-3y-Bqa"/>
+                            <constraint firstItem="oE1-Ca-mBj" firstAttribute="leading" secondItem="Qc5-GL-BSB" secondAttribute="leading" constant="223" id="l8v-DU-pI5"/>
                             <constraint firstItem="9Bh-6n-fJ1" firstAttribute="leading" secondItem="Qc5-GL-BSB" secondAttribute="leading" constant="136" id="uv4-gZ-Mra"/>
+                            <constraint firstItem="oE1-Ca-mBj" firstAttribute="leading" secondItem="aZc-vJ-wdW" secondAttribute="trailing" constant="43" id="vft-cE-Yg3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z32-bj-q3v"/>

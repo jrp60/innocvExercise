@@ -11,7 +11,7 @@ import Foundation
 
 class CreateUserVC: UIViewController {
     
-    var urlBase: String = ""
+    private var urlBase: String = ""
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userBirthday: UIDatePicker!
@@ -53,7 +53,6 @@ class CreateUserVC: UIViewController {
     
     func getUrl() {
         if let url = Bundle.main.infoDictionary?["API_URL"] as? String {
-            print(url)
             urlBase = url
         }
     }

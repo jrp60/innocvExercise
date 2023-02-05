@@ -12,8 +12,8 @@ import Foundation
 class UserVC: UIViewController {
     
     var user:User?
-    var urlBase: String = ""
-    var lastName: String = ""
+    private var urlBase: String = ""
+    private var lastName: String = ""
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var updateUserBtn: UIButton!
@@ -30,7 +30,6 @@ class UserVC: UIViewController {
     
     func getUrl() {
         if let url = Bundle.main.infoDictionary?["API_URL"] as? String {
-            print(url)
             urlBase = url
         }
     }
@@ -62,7 +61,6 @@ class UserVC: UIViewController {
                 self.showAlert(title: "Updated \(self.user!.name)", message: "New name: \(self.userName.text!)")
                     
             case .failure(let error):
-                print("error 2")
                 print(error)
             }
         }
@@ -89,7 +87,6 @@ class UserVC: UIViewController {
                 self.userName.text = name
                     
             case .failure(let error):
-                print("error 2")
                 print(error)
             }
         }
@@ -111,17 +108,12 @@ class UserVC: UIViewController {
         let idUser:String = String(user!.id)
         let url = urlBase+"/api/User/"+idUser
         AF.request(url, method: .delete).response { response in
-            print("print response")
-            debugPrint(response)
             switch response.result {
-            case .success(let response):
-                
-                print(response)
+            case .success(_):
                 print("user deleted")
                 self.navigationController?.popViewController(animated: true)
                     
             case .failure(let error):
-                print("error 2")
                 print(error)
             }
         }
@@ -130,14 +122,11 @@ class UserVC: UIViewController {
     func requestGetUser(id:String){
         let url = urlBase+"/api/User/"+id
         AF.request(url).responseJSON { response in
-            debugPrint(response)
-            print("get user")
             switch response.result {
             case .success(_):
                 let userAux = try? JSONDecoder().decode(User.self, from: response.data!)
                 self.user = userAux
             case .failure(let error):
-                print("error 3")
                 print(error)
             }
         }
