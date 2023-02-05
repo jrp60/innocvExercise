@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; configuration.title = "Delete"; ObjectID = "9Bh-6n-fJ1"; */
+"9Bh-6n-fJ1.configuration.title" = "Eliminar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9Bh-6n-fJ1"; */
+"9Bh-6n-fJ1.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Users"; ObjectID = "EaN-xi-AaC"; */
+"EaN-xi-AaC.title" = "Usuarios";
+
+/* Class = "UITextField"; text = "......-a-sd-asd"; ObjectID = "NAf-BB-nUt"; */
+"NAf-BB-nUt.text" = "";
+
+/* Class = "UIButton"; configuration.title = "Undo"; ObjectID = "aZc-vJ-wdW"; */
+"aZc-vJ-wdW.configuration.title" = "Deshacer";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aZc-vJ-wdW"; */
+"aZc-vJ-wdW.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "bnl-wN-94o"; */
+"bnl-wN-94o.placeholder" = "Nombre de usuario";
+
+/* Class = "UIButton"; configuration.title = "Create User"; ObjectID = "f6I-Cy-iKw"; */
+"f6I-Cy-iKw.configuration.title" = "Crear Usuario";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "f6I-Cy-iKw"; */
+"f6I-Cy-iKw.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Add User"; ObjectID = "fx9-m2-cmg"; */
+"fx9-m2-cmg.title" = "Añadir Usuario";
+
+/* Class = "UIButton"; configuration.title = "Update"; ObjectID = "oE1-Ca-mBj"; */
+"oE1-Ca-mBj.configuration.title" = "Actualizar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oE1-Ca-mBj"; */
+"oE1-Ca-mBj.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Add a new User"; ObjectID = "uqz-33-yW2"; */
+"uqz-33-yW2.text" = "Añadir nuevo usuario";
+
+/* Class = "UITabBarItem"; title = "Users"; ObjectID = "wL6-m1-aH3"; */
+"wL6-m1-aH3.title" = "Usuarios";

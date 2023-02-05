@@ -1,0 +1,17 @@
+errorGetUsers = "Error getting users";
+errorUpdateUser = "Error updating user";
+errorDeleteUser = "Error deleting user";
+errorGetUser = "Error getting user";
+errorCreateUser = "Error creating user";
+invalidName = "Invalid name";
+introduceValidName = "Introduce a valid name";
+updated = "Updated";
+newName = "New name: ";
+undidLastChange = "Undid last change";
+restoredName = "Restored name: ";
+delete = "Delete";
+areYouSureDeleteUser = "Are you sure you want to delete this user?";
+dismiss = "Dismiss";
+userCreated = "User created";
+userCreatedCorrectly = " was created correctly";
+searchUser = "SearchUser";

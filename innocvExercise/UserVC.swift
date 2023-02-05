@@ -42,7 +42,7 @@ class UserVC: UIViewController {
         if self.userName.text != "" {
             requestPutUser()
         } else {
-            self.showAlert(title: "Invalid name", message: "Introduce a valid name")
+            self.showAlert(title: NSLocalizedString("invalidName", comment: ""), message: NSLocalizedString("introduceValidName", comment: ""))
         }
     }
     
@@ -55,13 +55,12 @@ class UserVC: UIViewController {
         AF.request(finalUrl, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
             switch response.result {
             case .success(_):
-                print("user updated")
                 self.prepareUndo()
                 self.requestGetUser(id: idUser)
-                self.showAlert(title: "Updated \(self.user!.name)", message: "New name: \(self.userName.text!)")
+                self.showAlert(title: NSLocalizedString("updated", comment: "") + self.user!.name, message: NSLocalizedString("newName", comment: "") +  self.userName.text!)
                     
             case .failure(let error):
-                print(error)
+                self.showAlert(title: NSLocalizedString("errorUpdateUser", comment: ""), message: error.localizedDescription)
             }
         }
     }
@@ -80,25 +79,23 @@ class UserVC: UIViewController {
         AF.request(finalUrl, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
             switch response.result {
             case .success(_):
-                print("last change undo")
                 self.requestGetUser(id: idUser)
-                self.showAlert(title: "Undid last change", message: "Restored name: \(name)")
+                self.showAlert(title: NSLocalizedString("undidLastChange", comment: ""), message: NSLocalizedString("restoredName", comment: "") + name)
                 self.undoCangeBtn.isEnabled = false
                 self.userName.text = name
                     
             case .failure(let error):
-                print(error)
+                self.showAlert(title: NSLocalizedString("errorUpdateUser", comment: ""), message: error.localizedDescription)
             }
         }
     }
     
     @IBAction func deleteUser(_ sender: Any) {
-        let alertDelete = UIAlertController(title: "Delete \(user!.name)", message: "Are you sure you want to delete this user?", preferredStyle: .alert)
-        alertDelete.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in
+        let alertDelete = UIAlertController(title: NSLocalizedString("delete", comment: "") + user!.name, message: NSLocalizedString("areYouSureDeleteUser", comment: ""), preferredStyle: .alert)
+        alertDelete.addAction(UIAlertAction(title: NSLocalizedString("dismiss", comment: ""), style: .cancel, handler: { action in
             print("dismiss")
         }))
-        alertDelete.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { action in
-            
+        alertDelete.addAction(UIAlertAction(title: NSLocalizedString("delete", comment: ""), style: .destructive, handler: { action in
             self.requestDeleteUser()
         }))
         present(alertDelete, animated: true)
@@ -110,24 +107,25 @@ class UserVC: UIViewController {
         AF.request(url, method: .delete).response { response in
             switch response.result {
             case .success(_):
-                print("user deleted")
                 self.navigationController?.popViewController(animated: true)
                     
             case .failure(let error):
                 print(error)
+                self.showAlert(title: NSLocalizedString("errorDeleteUser", comment: ""), message: error.localizedDescription)
             }
         }
     }
     
     func requestGetUser(id:String){
         let url = urlBase+"/api/User/"+id
-        AF.request(url).responseJSON { response in
+        AF.request(url).validate(statusCode: 200..<299).responseJSON { response in
             switch response.result {
             case .success(_):
                 let userAux = try? JSONDecoder().decode(User.self, from: response.data!)
                 self.user = userAux
             case .failure(let error):
                 print(error)
+                self.showAlert(title: NSLocalizedString("errorGetUser", comment: ""), message: error.localizedDescription)
             }
         }
     }

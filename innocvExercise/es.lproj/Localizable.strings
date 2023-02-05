@@ -1,0 +1,17 @@
+errorGetUsers = "Error descargando usuarios";
+errorUpdateUser = "Error actualizando usuario";
+errorDeleteUser = "Error eliminando usuario";
+errorGetUser = "Error descargando usuario";
+errorCreateUser = "Error creando usuario";
+invalidName = "Nombre no válido";
+introduceValidName = "Introduce un nombre válido";
+updated = "Actualizado";
+newName = "Nuevo nombre: ";
+undidLastChange = "Último cambio deshecho";
+restoredName = "Nombre restaurado: ";
+delete = "Eliminar";
+areYouSureDeleteUser = "¿Está seguro de eliminar este usuario?";
+dismiss = "Descartar";
+userCreated = "Usuario creado";
+userCreatedCorrectly = " creado correctamente";
+searchUser = "Buscar usuario";

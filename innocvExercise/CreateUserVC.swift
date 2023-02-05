@@ -29,7 +29,7 @@ class CreateUserVC: UIViewController {
         if self.userName.text != "" {
             requestPostUser()
         } else {
-            showAlert(title: "Invalid name", message: "Introduce a valid name")
+            showAlert(title: NSLocalizedString("invalidName", comment: ""), message: NSLocalizedString("introduceValidName", comment: ""))
         }
     }
     
@@ -41,12 +41,10 @@ class CreateUserVC: UIViewController {
         AF.request(urlBase+"/api/User", method: .post, parameters: params, encoding: JSONEncoding.default).validate(statusCode: 200..<299).response { response in
             switch response.result {
             case .success(_):
-                print("user created")
-                self.showAlert(title: "User created", message: "\(self.userName.text!) was created correctly")
+                self.showAlert(title: NSLocalizedString("userCreated", comment: ""), message: self.userName.text! + NSLocalizedString("userCreatedCorrectly", comment: ""))
                 
             case .failure(let error):
-                print("error creating user")
-                print(error)
+                self.showAlert(title: NSLocalizedString("errorCreateUser", comment: ""), message: error.localizedDescription)
             }
         }
     }

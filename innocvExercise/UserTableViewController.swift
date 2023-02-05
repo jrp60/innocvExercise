@@ -21,7 +21,7 @@ class UserTableViewController: UITableViewController,UISearchResultsUpdating {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search User"
+        searchController.searchBar.placeholder = NSLocalizedString("searchUser", comment: "")
         navigationItem.searchController = searchController
         navigationItem.searchController?.searchBar.autocapitalizationType = .none
         
@@ -39,7 +39,7 @@ class UserTableViewController: UITableViewController,UISearchResultsUpdating {
     }
     
     func getUsers() {
-        AF.request(urlBase+"/api/User").responseJSON { response in
+        AF.request(urlBase+"/api/User").validate(statusCode: 200..<299).responseJSON { response in
             switch response.result {
             case .success(let jsonResponse):
                 self.users.removeAll()
@@ -54,9 +54,16 @@ class UserTableViewController: UITableViewController,UISearchResultsUpdating {
                 self.tableView.reloadData()
                     
             case .failure(let error):
-                print(error)
+                self.showAlert(title: NSLocalizedString("errorGetUsers", comment: ""), message: error.localizedDescription)
             }
         }
+    }
+    
+    func showAlert(title:String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(OKAction)
+            present(alertController, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
