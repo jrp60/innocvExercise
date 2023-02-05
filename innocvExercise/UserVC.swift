@@ -110,7 +110,6 @@ class UserVC: UIViewController {
                 self.navigationController?.popViewController(animated: true)
                     
             case .failure(let error):
-                print(error)
                 self.showAlert(title: NSLocalizedString("errorDeleteUser", comment: ""), message: error.localizedDescription)
             }
         }
@@ -124,7 +123,6 @@ class UserVC: UIViewController {
                 let userAux = try? JSONDecoder().decode(User.self, from: response.data!)
                 self.user = userAux
             case .failure(let error):
-                print(error)
                 self.showAlert(title: NSLocalizedString("errorGetUser", comment: ""), message: error.localizedDescription)
             }
         }
